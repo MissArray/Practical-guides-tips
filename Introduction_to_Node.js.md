@@ -72,7 +72,8 @@ In contrast, Node.js can deal with anything from a few hundred to a few hundred 
 
 :small_orange_diamond:  How does Node.js manages to juggle multiple tasks at what appears to be the same time? The answer is, through the [asynchronous event loop](https://hackmd.io/TH-RSOxxR4CoKdRIuOO2ww#) and a type of functions known as 'callbacks'. Let's look at the last line of the definition first:
 
->     Node.js's package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+>     Node.js’s package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+
 
 :small_orange_diamond: These open-source libraries are known as 'packages' and _npm_ is Node's default package manager. Let's look at both of those in more detail.
 
