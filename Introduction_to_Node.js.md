@@ -41,18 +41,19 @@ Open a terminal/bash/shell and copy-paste the appropriate command for your OS.
 
 
 ## What is Node.js? Deciphering the definition :flashlight:
-Until recently, the official definition on the [Node.js](https://nodejs.org/en/) website ran as follows:
+:small_orange_diamond: Node.js is a system that creates an interface between the front and the back end.  Node.js as such is written mainly in C and C++ but it translates JavaScript into machine code. Although it was originally developed for back-end programming and is still primarily associated with back-end tasks, it is [a misconception](https://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging) to assume that npm is only used on the server side: npm is also used for front-end tasks and front-end packages, such as [ESLint](https://eslint.org/) and [webpack](https://webpack.js.org/), are among the most popular npm downloads.
+:small_orange_diamond: Node.js is a system that creates an interface between the front and the back end.  Node.js as such is written mainly in C and C++ but it translates JavaScript into machine code. 
+:small_orange_diamond: You'll almost certainly use **npm**, Node.js's de facto package manager - a practically inextricable part of Node - for both back-end and front-end tasks.Although it was originally developed for back-end programming and is still primarily associated with back-end tasks, it is [a misconception](https://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging) to assume that npm is only used on the server side: npm is also used for front-end tasks and front-end packages, such as [ESLint](https://) and webpack, are among the most popular npm downloads.
+ 
+:small_orange_diamond:  Until recently, the official definition on the [Node.js](https://nodejs.org/en/) website ran as follows:
 > Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.
 >     Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
->     Node.js’s package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+>     Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
 Let's break it down:
-> Node.js® is a JavaScript runtime ...
+> Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.
 
-:small_orange_diamond: This means that Node.js is basically a software stack that allows you to use JavaScript to write applications.
-> ... built on Chrome’s V8 JavaScript engine.
-
-:small_orange_diamond: This runtime environment includes the V8 engine. A JS engine is code that processes and translates other code from one programming language into another. The first JS engine, nicknamed 'SpiderMonkey', was created for Netscape and was written in C++ and a much updated version now powers Firefox. Microsoft's JS engine is called 'Chakra', while Node.js runs on V8, the JS engine that was developed for and powers Chrome.
+:small_orange_diamond: This means that Node.js is basically a software stack that allows you to use JavaScript to write applications. This runtime environment includes the V8 engine. A JS engine is code that processes and translates other code from one programming language into another. The first JS engine, nicknamed 'SpiderMonkey', was created for Netscape and was written in C++ and a much updated version now powers Firefox. Microsoft's JS engine is called 'Chakra', while Node.js runs on V8, the JS engine that was developed for and powers Chrome.
 
 What the V8 engine does when it receives JavaScript code is parse it; i.e. run through it, check it for syntax errors, and, if it's executable, read it from top to bottom and convert it into machine code. 
 
@@ -72,8 +73,8 @@ In contrast, Node.js can deal with anything from a few hundred to a few hundred 
 
 :small_orange_diamond:  How does Node.js manages to juggle multiple tasks at what appears to be the same time? The answer is, through the [asynchronous event loop](https://hackmd.io/TH-RSOxxR4CoKdRIuOO2ww#) and a type of functions known as 'callbacks'. Let's look at the last line of the definition first:
 
->     Node.js’s package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
-
+>     Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+>     
 
 :small_orange_diamond: These open-source libraries are known as 'packages' and _npm_ is Node's default package manager. Let's look at both of those in more detail.
 
