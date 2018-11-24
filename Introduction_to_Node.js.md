@@ -38,11 +38,16 @@ Open a terminal/bash/shell and copy-paste the appropriate command for your OS.
     If you have Homebrew, type:
     `$ brew install node`
     This should install both Node and npm
-
+    
+:small_orange_diamond: Once you have installed Node.js, you're ready to start your first Node project. Whenever you create a new project on your computer (or download a project that doesn't have a package.json file), **the first essential step** is to open your terminal, navigate to your project's root folder and initialise the project with
+    `git init`
+and
+    `npm init`.
+After this step, your project is ready for GitHub and Node.js respectively.
 
 ## What is Node.js? Deciphering the definition :flashlight:
-:small_orange_diamond: Node.js is a system that creates an interface between the front and the back end.  Node.js as such is written mainly in C and C++ but it translates JavaScript into machine code. Although it was originally developed for back-end programming and is still primarily associated with back-end tasks, it is [a misconception](https://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging) to assume that npm is only used on the server side: npm is also used for front-end tasks and front-end packages, such as [ESLint](https://eslint.org/) and [webpack](https://webpack.js.org/), are among the most popular npm downloads.
-:small_orange_diamond: Node.js is a system that creates an interface between the front and the back end.  Node.js as such is written mainly in C and C++ but it translates JavaScript into machine code. 
+:small_orange_diamond: Node.js is a system that creates an interface between the front and the back end.  Node.js as such is written mainly in C and C++ but it translates JavaScript into machine code. Although it was originally developed for back-end programming and is still primarily associated with back-end tasks, it is [a misconception](https://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging) to assume that *npm* is only used on the server side: *npm* is also used for front-end tasks and front-end packages, such as [ESLint](https://eslint.org/) and [webpack](https://webpack.js.org/), are among the most popular npm downloads.
+
 :small_orange_diamond: You'll almost certainly use **npm**, Node.js's de facto package manager - a practically inextricable part of Node - for both back-end and front-end tasks.Although it was originally developed for back-end programming and is still primarily associated with back-end tasks, it is [a misconception](https://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging) to assume that npm is only used on the server side: npm is also used for front-end tasks and front-end packages, such as [ESLint](https://) and webpack, are among the most popular npm downloads.
  
 :small_orange_diamond:  Until recently, the official definition on the [Node.js](https://nodejs.org/en/) website ran as follows:
@@ -225,10 +230,8 @@ Now, the `package.json` that every project created with Node.js will inevitably 
 ⚠️  **NB Make sure that you are in the root directory of your project before you run `npm install` or `npm i`.**
 
 If you change any of those modules in the meantime, the changes will be recorded in the package.json of your copy of the project. Anyone else working on another copy (often a local GitHub repository) of that project will have to get the new package.json (often by pulling the master branch or fetching another branch) and running `npm install` again.
-
 ### :small_orange_diamond: Create a package.json with _npm init_
-Every new project that uses Node.js needs to be initialised with the command `$ npm init`,
-which creates the package.json. When you run this command, Node will ask you to provide the basic details that go right at the top of the package.json it'll create for you. While you can type and enter those details manually, you don't have to. You can press 'enter' multiple times or even type
+Every new project that uses Node.js needs to be initialised with the command `$ npm init`, which creates the package.json. When you run this command, Node will ask you to provide the basic details that go right at the top of the package.json it'll create for you. While you can type and enter those details manually, you don't have to. You can press 'enter' multiple times or even type
 $ npm init -y
 and let Node.js fill in the gaps as best it can. You can edit the package.json file whenever you need to, e.g. to apply a fix recommended by a security alert.
 
@@ -293,7 +296,7 @@ Typically, every package.json file will contain a list of brief details about yo
 }
 ```
 * `main` specifies the primary entry point to your application (it will often be the `index.js` file) 
-* `scripts` is where you specify the commands that need to be run for various purposes - e.g. to run the server. 
+* `scripts` is where you specify the commands that need to be run for various purposes - e.g. to run the server. For example, if your `start` script is `"start": "node server.js"`, whenever you enter `npm start` in your terminal, Node will execute the code in your `server.js` file.
 * `devDependencies` are the packages you need in the production phase, ie. when you're developing your application. For example, any packages you use for testing, such as Tape or Jest, will be installed as devDependencies.
 * `dependencies` are the packages that are needed for your application to run. For example, if you're using Express but it's omitted from the dependencies, your application simply won't run when your project is cloned on another machine.
 
@@ -336,7 +339,10 @@ Here's an example of of what the entry for `nodemon` looks in the `package.json`
 
 When you push your projects to GitHub or similar platforms, you should commit the `package-json.lock` to make it available to anyone who clones your code, so make sure you don't add it to `.gitignore`.
 
+## How do I structure my Node.js project's directory? :hammer:
+There's no universal answer to this question, but the commonly accepted rule of thumb is, separate your 'concerns'; i.e. the tasks your code will do. Some files, like `package.json`, will be created automatically in your root folder, where you should be when you run `npm init`. 
 
+Generally, in a simple Node.js project front-end (client-side) files are clustered in the `/public` directory, while back-end (server-side) files are clustered in the `/src` directory. You can name these directories differently, but keeping to conventions makes it easier for other developers to understand at a glance how you've structured your project. [Here's](https://github.com/MissArray/Practical-guides-tips/blob/master/folder_structure_Node_project.pdf) a visual example you can download.
 
 ## OK, but I still don't see what makes Node.js so special?  :neutral_face:
 
@@ -345,8 +351,8 @@ When you push your projects to GitHub or similar platforms, you should commit th
 
 In a nutshell, Node.js is one of the key tools that enable us to become full-stack developers with just one language: JavaScript.
 
-### ⭐️ Node.js enables us to build scaleable applications
-...and is much faster compared to e.g. Python or Ruby _and_ can handle multiple simultaneous client - server connections with plenty of throughput (i.e. input - output per time unit), which makes it possible to build scaleable applications. 
+### ⭐️ Node.js enables us to build scalable applications
+...and is much faster compared to e.g. Python or Ruby _and_ can handle multiple simultaneous client - server connections with plenty of throughput (i.e. input - output per time unit), which makes it possible to build [scalable](https://en.wikipedia.org/wiki/Scalability) applications. Scalability is considered to be one of Node.js's main advantages.
 
 ### ⭐️ Node.js is the largest repository of packages
 ... which extend Node's basic functionality almost unlimitedly.
@@ -362,7 +368,7 @@ Node.js
 
 * is versatile, thanks to an enormous pool of open-source packages 
 
-* enables us to build scaleable applications
+* enables us to build scalable applications
 
 * spans the full stack, using JavaScript for both client and server operations
 
